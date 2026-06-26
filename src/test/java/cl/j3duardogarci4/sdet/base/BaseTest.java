@@ -1,38 +1,38 @@
-package cl.j3duardogarci4.sdet.base;
+    package cl.j3duardogarci4.sdet.base;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+    import io.github.bonigarcia.wdm.WebDriverManager;
+    import org.junit.jupiter.api.AfterEach;
+    import org.junit.jupiter.api.BeforeEach;
+    import org.openqa.selenium.WebDriver;
+    import org.openqa.selenium.chrome.ChromeDriver;
+    import org.openqa.selenium.chrome.ChromeOptions;
 
-public class BaseTest {
+    public class BaseTest {
 
-    protected WebDriver driver;
+        protected WebDriver driver;
 
-    @BeforeEach
-    public void setUp() {
+        @BeforeEach
+        public void setUp() {
 
-        WebDriverManager.chromedriver()
-        .browserVersion("149")
-        .setup();
+            WebDriverManager.chromedriver()
+            .browserVersion("149")
+            .setup();
 
-        ChromeOptions options = new ChromeOptions();
-        options.setBinary("C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe");
+            ChromeOptions options = new ChromeOptions();
+            options.setBinary("C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe");
 
-        driver = new ChromeDriver(options);
-        driver.manage().window().maximize();
+            driver = new ChromeDriver(options);
+            driver.manage().window().maximize();
 
-    }
+        }
 
-    @AfterEach
-    public void tearDown() {
+        @AfterEach
+        public void tearDown() {
 
-        if (driver != null) {
-            driver.quit();
+            if (driver != null) {
+                driver.quit();
+            }
+
         }
 
     }
-
-}
